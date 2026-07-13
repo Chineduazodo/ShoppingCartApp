@@ -2,6 +2,20 @@
     Console.WriteLine("Hello, World!");
 ShoppingCart cart = new ShoppingCart();
 DigitalProduct book = new DigitalProduct();
+book.Name = "The Potters Wheel";
+book.Price = 5000;
+book.DownloadUrl = "www.search.com";
+
+PhysicalProduct Laptop = new PhysicalProduct();
+Laptop.Name = "Dell";
+Laptop.Price = 50000;
+Laptop.Weight = 15.5;
+
+cart.AddProduct(book);
+cart.AddProduct(Laptop);
+
+Console.WriteLine("======SHOPPING CART ITEMS======");
+
 public abstract class Product
 {
     public string Name;
@@ -49,6 +63,10 @@ public class ShoppingCart
             total += p.Price;
         }
         return total;
+    }
+    public List<Product> GetItems()
+    {
+        return _items;
     }
 }
 
