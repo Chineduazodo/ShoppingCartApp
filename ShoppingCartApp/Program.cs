@@ -1,72 +1,28 @@
-﻿using System.Collections.Generic;
-    Console.WriteLine("Hello, World!");
-ShoppingCart cart = new ShoppingCart();
+﻿//This line allows us to access items from the list 
+    using System.Collections.Generic;
+   //===MAIN===
+ShoppingCart cart = new ShoppingCart();//Creates the cart object
+
 DigitalProduct book = new DigitalProduct();
 book.Name = "The Potters Wheel";
-book.Price = 5000;
+book.Price = 5000;//// validated by Price's setter
 book.DownloadUrl = "www.search.com";
 
 PhysicalProduct Laptop = new PhysicalProduct();
 Laptop.Name = "Dell";
 Laptop.Price = 50000;
 Laptop.Weight = 15.5;
-
+// add both products to the cart
 cart.AddProduct(book);
 cart.AddProduct(Laptop);
 
 Console.WriteLine("======SHOPPING CART ITEMS======");
 
-public abstract class Product
+
+foreach (Product p in cart.GetItems())
 {
-    public string Name;
-    private decimal _price;
-    public decimal Price
-    {
-        get => _price;
-        set => _price = value < 0 ? 0 : value;
-    }
-    public abstract void DisplayInfo();
+    p.DisplayInfo();  // runs the correct override automatically (polymorphism)
 }
-
-    public class DigitalProduct : Product
-    {
-        public string DownloadUrl;
-        public override void DisplayInfo()
-        {
-            Console.WriteLine($"product:{Name}  |price:#{Price:N2}  |link:{DownloadUrl}");
-        }
-    }
-
-public class PhysicalProduct : Product
-{
-    public double Weight;
-
-    public override void DisplayInfo()
-    {
-        Console.WriteLine($"product:{Name} |price: #{Price:N2}|weight: {Weight}kg");
-    }
-}
-public class ShoppingCart
-{
-    private List<Product> _items = new List<Product>();
-
-    public void AddProduct(Product p)
-    {
-        _items.Add(p);
-    }
-
-    public decimal CalculateTotal()
-    {
-        decimal total = 0;
-        foreach (Product p in _items)
-        {
-            total += p.Price;
-        }
-        return total;
-    }
-    public List<Product> GetItems()
-    {
-        return _items;
-    }
-}
+Console.WriteLine("=============");
+Console.WriteLine($"Total cart value:#{cart.CalculateTotal():N2}");
 

@@ -12,3 +12,4 @@ C:\Users\DELL\source\repos\ShoppingCartApp\ShoppingCartApp\obj\Debug\net10.0\ref
 C:\Users\DELL\source\repos\ShoppingCartApp\ShoppingCartApp\obj\Debug\net10.0\ShoppingCartApp.pdb
 C:\Users\DELL\source\repos\ShoppingCartApp\ShoppingCartApp\obj\Debug\net10.0\ShoppingCartApp.genruntimeconfig.cache
 C:\Users\DELL\source\repos\ShoppingCartApp\ShoppingCartApp\obj\Debug\net10.0\ref\ShoppingCartApp.dll
+C:\Users\DELL\source\repos\ShoppingCartApp\ShoppingCartApp\obj\Debug\net10.0\ShoppingCartApp.sourcelink.json
